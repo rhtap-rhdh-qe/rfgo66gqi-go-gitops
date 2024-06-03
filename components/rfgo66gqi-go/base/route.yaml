@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: rfgo66gqi-go
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: rfgo66gqi-go 
+  name: rfgo66gqi-go
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: rfgo66gqi-go
+    weight: 100 
